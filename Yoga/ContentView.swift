@@ -2,12 +2,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var store = WorkoutStore()
+    @State private var timer = WorkoutTimer(timers: [])
 
     var body: some View {
         NavigationStack {
             Group {
                 if let workout = store.workout, !workout.timers.isEmpty {
-                    WorkoutView(workout: workout)
+                    WorkoutView(workout: workout, timer: timer)
                 } else {
                     EmptyWorkoutView(action: importFromPasteboard)
                 }
@@ -42,6 +43,10 @@ struct ContentView: View {
             if store.workout == nil, store.url != nil {
                 await store.reload()
             }
+        }
+        .onChange(of: store.workout, initial: true) { _, workout in
+            timer.reset()
+            timer = WorkoutTimer(timers: workout?.timers ?? [])
         }
     }
 

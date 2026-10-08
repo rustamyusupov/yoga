@@ -2,29 +2,25 @@ import SwiftUI
 
 struct WorkoutView: View {
     let workout: Workout
-
-    // Timer state comes in step 3; for now the display shows the first interval.
-    private var seconds: Int { workout.timers.first?.time ?? 0 }
-    private var activeIndex: Int? { nil }
-    private var isRunning: Bool { false }
+    let timer: WorkoutTimer
 
     var body: some View {
         VStack(spacing: 16) {
-            TimerDisplay(seconds: seconds)
+            TimerDisplay(seconds: timer.seconds)
                 // the rounded font carries a lot of internal leading
                 .padding(.top, -8)
                 .padding(.bottom, -18)
 
             HStack(spacing: 16) {
-                Button {} label: {
+                Button(action: timer.reset) {
                     Text("Reset").frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
-                Button {} label: {
-                    Text(isRunning ? "Stop" : "Start").frame(maxWidth: .infinity)
+                Button(action: timer.toggle) {
+                    Text(timer.isRunning ? "Stop" : "Start").frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
-                .tint(isRunning ? .red : .green)
+                .tint(timer.isRunning ? .red : .green)
             }
             .controlSize(.large)
             .fontWeight(.semibold)
@@ -33,7 +29,7 @@ struct WorkoutView: View {
 
             List {
                 ForEach(Array(workout.timers.enumerated()), id: \.element.id) { index, interval in
-                    IntervalRow(interval: interval, isActive: index == activeIndex)
+                    IntervalRow(interval: interval, isActive: index == timer.activeIndex)
                         .listRowSeparator(index == workout.timers.count - 1 ? .hidden : .visible, edges: .bottom)
                         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 }
@@ -70,11 +66,10 @@ struct IntervalRow: View {
             Spacer()
             Text(formatTime(interval.time))
                 .monospacedDigit()
-                .foregroundStyle(.secondary)
+                .foregroundStyle(isActive ? .primary : .secondary)
         }
         .frame(maxWidth: .infinity)
-        .fontWeight(isActive ? .bold : .regular)
-        .listRowBackground(isActive ? Color.accentColor.opacity(0.2) : nil)
+        .foregroundStyle(isActive ? AnyShapeStyle(.tint) : AnyShapeStyle(.primary))
     }
 }
 
@@ -96,15 +91,17 @@ struct FooterView: View {
 }
 
 #Preview {
+    let workout = Workout(
+        name: "Yoga",
+        sport: "Yoga",
+        timers: [
+            Interval(id: 0, name: "Cat-Cow", time: 90),
+            Interval(id: 1, name: "Child’s Pose", time: 180),
+        ]
+    )
+
     NavigationStack {
-        WorkoutView(workout: Workout(
-            name: "Yoga",
-            sport: "Yoga",
-            timers: [
-                Interval(id: 0, name: "Cat-Cow", time: 90),
-                Interval(id: 1, name: "Child’s Pose", time: 180),
-            ]
-        ))
-        .navigationTitle("Yoga")
+        WorkoutView(workout: workout, timer: WorkoutTimer(timers: workout.timers))
+            .navigationTitle("Yoga")
     }
 }
