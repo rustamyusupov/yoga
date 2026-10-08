@@ -4,12 +4,13 @@ struct ContentView: View {
     @State private var store = WorkoutStore()
     @State private var timer = WorkoutTimer(timers: [])
     @State private var sounds = WorkoutSounds(player: SoundPlayer())
+    @State private var strava = StravaClient()
 
     var body: some View {
         NavigationStack {
             Group {
                 if let workout = store.workout, !workout.timers.isEmpty {
-                    WorkoutView(workout: workout, timer: timer)
+                    WorkoutView(workout: workout, timer: timer, strava: strava)
                 } else {
                     EmptyWorkoutView(action: importFromPasteboard)
                 }
@@ -47,7 +48,13 @@ struct ContentView: View {
         }
         .onChange(of: store.workout, initial: true) { _, workout in
             timer.reset()
-            timer = WorkoutTimer(timers: workout?.timers ?? [], onEvent: sounds.handle)
+            timer = WorkoutTimer(timers: workout?.timers ?? [], onEvent: { [sounds, strava] (event: WorkoutTimer.Event) in
+                sounds.handle(event)
+
+                if case .complete(let summary) = event, let workout {
+                    Task { await strava.send(workout: workout, summary: summary) }
+                }
+            })
         }
         .onChange(of: timer.isRunning) { _, isRunning in
             // keep the screen on while the workout runs in the foreground

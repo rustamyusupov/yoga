@@ -30,6 +30,9 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         UIBackgroundModes: [audio]
+        CFBundleURLTypes:
+          - CFBundleURLName: me.rstm.Yoga.strava
+            CFBundleURLSchemes: [yoga]
         ITSAppUsesNonExemptEncryption: false
   YogaTests:
     type: bundle.unit-test

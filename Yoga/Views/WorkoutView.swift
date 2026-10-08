@@ -3,6 +3,7 @@ import SwiftUI
 struct WorkoutView: View {
     let workout: Workout
     let timer: WorkoutTimer
+    let strava: StravaClient
 
     var body: some View {
         VStack(spacing: 16) {
@@ -37,7 +38,7 @@ struct WorkoutView: View {
             .listStyle(.plain)
             .environment(\.defaultMinListRowHeight, 40)
 
-            FooterView()
+            FooterView(strava: strava)
                 .padding(.top, -16)
         }
     }
@@ -74,15 +75,15 @@ struct IntervalRow: View {
 }
 
 struct FooterView: View {
+    let strava: StravaClient
+
     var body: some View {
         HStack {
             Text(AppInfo.version)
                 .font(.footnote)
                 .foregroundStyle(.secondary)
             Spacer()
-            Button("Connect Strava") {}
-                .font(.footnote)
-                .disabled(true)
+            StravaButton(strava: strava)
         }
         .padding(.horizontal)
         .padding(.top, 12)
@@ -101,7 +102,11 @@ struct FooterView: View {
     )
 
     NavigationStack {
-        WorkoutView(workout: workout, timer: WorkoutTimer(timers: workout.timers))
+        WorkoutView(
+            workout: workout,
+            timer: WorkoutTimer(timers: workout.timers),
+            strava: StravaClient(store: MemoryStore())
+        )
             .navigationTitle("Yoga")
     }
 }
