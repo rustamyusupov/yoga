@@ -9,15 +9,19 @@
 /* Begin PBXBuildFile section */
 		17F6DE44462CADB10D2F9DEA /* WorkoutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6FDE9D242487B857027FBC /* WorkoutStoreTests.swift */; };
 		185C9705CF19F20518DA6112 /* YogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF7597DBEEF953D36220AD /* YogaApp.swift */; };
+		1A64F9B5A246B6B57EEDB461 /* beep_short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0CDDE9612CBE7EFD46279F76 /* beep_short.wav */; };
 		2FA2087FD3C5D13B450AC9AF /* WorkoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B83B616154A8F76C09EB63 /* WorkoutTimer.swift */; };
 		35A2B3AABA5BFB8C434621C1 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7029FA0AD8DB46BA9272F9C /* Workout.swift */; };
 		3BA89959626EF64137D67C63 /* yoga.json in Resources */ = {isa = PBXBuildFile; fileRef = AF3E6E98E826C7DBFD60412F /* yoga.json */; };
+		40E3A6C939A5F01D19B3CDB0 /* beep_long.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FF7178694EAA8A43F3D7100 /* beep_long.wav */; };
 		5540AD9FF9E77F5650197E8E /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0CAEC1FAEBD9FE8531FCE /* WorkoutView.swift */; };
 		55F8965D3CBBDD20A90D1833 /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53277E807DAB15F45B0EFF2 /* WorkoutStore.swift */; };
 		5C9B29E362703456C59BC5FB /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324A19698EE9BAD7DFF7C41 /* TimeFormat.swift */; };
+		6C3B40A1E4F264CC7A1BE62E /* WorkoutSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063BE1142516AF4BBE81F8F /* WorkoutSounds.swift */; };
 		834385FEBB2B56A7EA71B559 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DC0A7231A8E7EE693A9D10 /* AppInfo.swift */; };
 		9BB5659EFA8CB82282768A48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24615A657F31D9FEF61E744F /* ContentView.swift */; };
 		C5AD0344648B36EE006E5DD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A620B936C4C291C7929B09F6 /* Assets.xcassets */; };
+		CA41BA011985EE650F36E718 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4CF996C36D5D516104DFD /* SoundPlayer.swift */; };
 		DB7F065FD1AF809BFE46A8AF /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412DC2775BDCD844B9C9937 /* Interval.swift */; };
 		E2251895AF0862AC07E6CF72 /* WorkoutParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F943E2FB7404C723A5E071 /* WorkoutParserTests.swift */; };
 		E9204751343B761D2C33C561 /* EmptyWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDEF22FD68431EF746965B /* EmptyWorkoutView.swift */; };
@@ -38,16 +42,20 @@
 /* Begin PBXFileReference section */
 		081864203FA56818F545243A /* Pasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
 		0A5A40110F587EA2C73AE42A /* Yoga.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Yoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CDDE9612CBE7EFD46279F76 /* beep_short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep_short.wav; sourceTree = "<group>"; };
 		1E8018D9EBD0A23A1F6B09BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2412DC2775BDCD844B9C9937 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		24615A657F31D9FEF61E744F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3ECF7597DBEEF953D36220AD /* YogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaApp.swift; sourceTree = "<group>"; };
+		4063BE1142516AF4BBE81F8F /* WorkoutSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSounds.swift; sourceTree = "<group>"; };
 		49007FC437C3740249201E3D /* WorkoutTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimerTests.swift; sourceTree = "<group>"; };
 		4A6FDE9D242487B857027FBC /* WorkoutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStoreTests.swift; sourceTree = "<group>"; };
+		4FA4CF996C36D5D516104DFD /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		61DC0A7231A8E7EE693A9D10 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		72B83B616154A8F76C09EB63 /* WorkoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimer.swift; sourceTree = "<group>"; };
 		7324A19698EE9BAD7DFF7C41 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		75E0CAEC1FAEBD9FE8531FCE /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		7FF7178694EAA8A43F3D7100 /* beep_long.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep_long.wav; sourceTree = "<group>"; };
 		85ABDE9BDE4E1FD5A9797316 /* YogaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = YogaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCDEF22FD68431EF746965B /* EmptyWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWorkoutView.swift; sourceTree = "<group>"; };
 		96F943E2FB7404C723A5E071 /* WorkoutParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParserTests.swift; sourceTree = "<group>"; };
@@ -109,6 +117,8 @@
 				1E8018D9EBD0A23A1F6B09BB /* Info.plist */,
 				3ECF7597DBEEF953D36220AD /* YogaApp.swift */,
 				E62E480A0BFCC9FCA00766E9 /* Model */,
+				E084B83C5D9D80B42BE67ECD /* Resources */,
+				90E1ADE09956352A546FCA80 /* Sound */,
 				6F10C8E535EB4EA57A86921C /* Store */,
 				5FAB64F8A301036D1D4379DD /* Support */,
 				5EC2E76DBC2C3FABBC2A9592 /* Timer */,
@@ -126,6 +136,24 @@
 			);
 			sourceTree = "<group>";
 		};
+		90E1ADE09956352A546FCA80 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4CF996C36D5D516104DFD /* SoundPlayer.swift */,
+				4063BE1142516AF4BBE81F8F /* WorkoutSounds.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		B0DC568E6FD8AF93DDFA29F7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7FF7178694EAA8A43F3D7100 /* beep_long.wav */,
+				0CDDE9612CBE7EFD46279F76 /* beep_short.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		CE89737985962F6BEF1FDE9B /* YogaTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +163,14 @@
 				4FACE43A55A642CA368F1563 /* Fixtures */,
 			);
 			path = YogaTests;
+			sourceTree = "<group>";
+		};
+		E084B83C5D9D80B42BE67ECD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0DC568E6FD8AF93DDFA29F7 /* Sounds */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E62E480A0BFCC9FCA00766E9 /* Model */ = {
@@ -246,6 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5AD0344648B36EE006E5DD7 /* Assets.xcassets in Resources */,
+				40E3A6C939A5F01D19B3CDB0 /* beep_long.wav in Resources */,
+				1A64F9B5A246B6B57EEDB461 /* beep_short.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +309,10 @@
 				E9204751343B761D2C33C561 /* EmptyWorkoutView.swift in Sources */,
 				DB7F065FD1AF809BFE46A8AF /* Interval.swift in Sources */,
 				FA2BF9DDC4FDA33C1063E6FD /* Pasteboard.swift in Sources */,
+				CA41BA011985EE650F36E718 /* SoundPlayer.swift in Sources */,
 				5C9B29E362703456C59BC5FB /* TimeFormat.swift in Sources */,
 				35A2B3AABA5BFB8C434621C1 /* Workout.swift in Sources */,
+				6C3B40A1E4F264CC7A1BE62E /* WorkoutSounds.swift in Sources */,
 				55F8965D3CBBDD20A90D1833 /* WorkoutStore.swift in Sources */,
 				2FA2087FD3C5D13B450AC9AF /* WorkoutTimer.swift in Sources */,
 				5540AD9FF9E77F5650197E8E /* WorkoutView.swift in Sources */,

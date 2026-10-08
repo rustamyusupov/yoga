@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var store = WorkoutStore()
     @State private var timer = WorkoutTimer(timers: [])
+    @State private var sounds = WorkoutSounds(player: SoundPlayer())
 
     var body: some View {
         NavigationStack {
@@ -46,7 +47,14 @@ struct ContentView: View {
         }
         .onChange(of: store.workout, initial: true) { _, workout in
             timer.reset()
-            timer = WorkoutTimer(timers: workout?.timers ?? [])
+            timer = WorkoutTimer(timers: workout?.timers ?? [], onEvent: sounds.handle)
+        }
+        .onChange(of: timer.isRunning) { _, isRunning in
+            if isRunning {
+                sounds.player.startWorkout()
+            } else {
+                sounds.player.endWorkout()
+            }
         }
     }
 
