@@ -12,6 +12,7 @@
 		3BA89959626EF64137D67C63 /* yoga.json in Resources */ = {isa = PBXBuildFile; fileRef = AF3E6E98E826C7DBFD60412F /* yoga.json */; };
 		5C9B29E362703456C59BC5FB /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324A19698EE9BAD7DFF7C41 /* TimeFormat.swift */; };
 		9BB5659EFA8CB82282768A48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24615A657F31D9FEF61E744F /* ContentView.swift */; };
+		C5AD0344648B36EE006E5DD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A620B936C4C291C7929B09F6 /* Assets.xcassets */; };
 		DB7F065FD1AF809BFE46A8AF /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412DC2775BDCD844B9C9937 /* Interval.swift */; };
 		E2251895AF0862AC07E6CF72 /* WorkoutParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F943E2FB7404C723A5E071 /* WorkoutParserTests.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		7324A19698EE9BAD7DFF7C41 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		85ABDE9BDE4E1FD5A9797316 /* YogaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = YogaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F943E2FB7404C723A5E071 /* WorkoutParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParserTests.swift; sourceTree = "<group>"; };
+		A620B936C4C291C7929B09F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF3E6E98E826C7DBFD60412F /* yoga.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = yoga.json; sourceTree = "<group>"; };
 		B7029FA0AD8DB46BA9272F9C /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +61,7 @@
 		73832999978726FEB6682CA4 /* Yoga */ = {
 			isa = PBXGroup;
 			children = (
+				A620B936C4C291C7929B09F6 /* Assets.xcassets */,
 				24615A657F31D9FEF61E744F /* ContentView.swift */,
 				1E8018D9EBD0A23A1F6B09BB /* Info.plist */,
 				3ECF7597DBEEF953D36220AD /* YogaApp.swift */,
@@ -112,6 +115,7 @@
 			buildConfigurationList = B7178A8D9946078CF236825A /* Build configuration list for PBXNativeTarget "Yoga" */;
 			buildPhases = (
 				A5E7828A3FB0C4B6922DC817 /* Sources */,
+				CDCE2C9C64293F93798A043C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -186,6 +190,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA89959626EF64137D67C63 /* yoga.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDCE2C9C64293F93798A043C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AD0344648B36EE006E5DD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

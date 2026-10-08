@@ -18,6 +18,9 @@ targets:
     type: application
     platform: iOS
     sources: [Yoga]
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     info:
       path: Yoga/Info.plist
       properties:
