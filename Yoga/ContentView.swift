@@ -50,6 +50,9 @@ struct ContentView: View {
             timer = WorkoutTimer(timers: workout?.timers ?? [], onEvent: sounds.handle)
         }
         .onChange(of: timer.isRunning) { _, isRunning in
+            // keep the screen on while the workout runs in the foreground
+            UIApplication.shared.isIdleTimerDisabled = isRunning
+
             if isRunning {
                 sounds.player.startWorkout()
             } else {

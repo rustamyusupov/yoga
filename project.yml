@@ -29,6 +29,7 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIBackgroundModes: [audio]
         ITSAppUsesNonExemptEncryption: false
   YogaTests:
     type: bundle.unit-test

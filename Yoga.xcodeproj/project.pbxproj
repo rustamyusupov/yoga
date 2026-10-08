@@ -16,6 +16,7 @@
 		40E3A6C939A5F01D19B3CDB0 /* beep_long.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FF7178694EAA8A43F3D7100 /* beep_long.wav */; };
 		5540AD9FF9E77F5650197E8E /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0CAEC1FAEBD9FE8531FCE /* WorkoutView.swift */; };
 		55F8965D3CBBDD20A90D1833 /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53277E807DAB15F45B0EFF2 /* WorkoutStore.swift */; };
+		5887C028F7821B6F9D3D3154 /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = A303564D76B927FE5062BA4A /* silence.wav */; };
 		5C9B29E362703456C59BC5FB /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324A19698EE9BAD7DFF7C41 /* TimeFormat.swift */; };
 		6C3B40A1E4F264CC7A1BE62E /* WorkoutSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063BE1142516AF4BBE81F8F /* WorkoutSounds.swift */; };
 		834385FEBB2B56A7EA71B559 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DC0A7231A8E7EE693A9D10 /* AppInfo.swift */; };
@@ -59,6 +60,7 @@
 		85ABDE9BDE4E1FD5A9797316 /* YogaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = YogaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCDEF22FD68431EF746965B /* EmptyWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWorkoutView.swift; sourceTree = "<group>"; };
 		96F943E2FB7404C723A5E071 /* WorkoutParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParserTests.swift; sourceTree = "<group>"; };
+		A303564D76B927FE5062BA4A /* silence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silence.wav; sourceTree = "<group>"; };
 		A620B936C4C291C7929B09F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF3E6E98E826C7DBFD60412F /* yoga.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = yoga.json; sourceTree = "<group>"; };
 		B7029FA0AD8DB46BA9272F9C /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				7FF7178694EAA8A43F3D7100 /* beep_long.wav */,
 				0CDDE9612CBE7EFD46279F76 /* beep_short.wav */,
+				A303564D76B927FE5062BA4A /* silence.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				C5AD0344648B36EE006E5DD7 /* Assets.xcassets in Resources */,
 				40E3A6C939A5F01D19B3CDB0 /* beep_long.wav in Resources */,
 				1A64F9B5A246B6B57EEDB461 /* beep_short.wav in Resources */,
+				5887C028F7821B6F9D3D3154 /* silence.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

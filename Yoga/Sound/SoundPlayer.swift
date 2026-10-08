@@ -8,6 +8,9 @@ import AVFoundation
 /// - `duck`: `.mixWithOthers` + `.duckOthers` — only while speaking an interval name;
 ///   iOS applies ducking on activation and lifts it on deactivation, so the session is
 ///   re-activated around each utterance. The duck level itself is fixed by the system.
+///
+/// While a workout is active a silent track loops so the app keeps running in the
+/// background (`UIBackgroundModes: audio`) between beeps.
 @MainActor
 final class SoundPlayer: NSObject, AVSpeechSynthesizerDelegate {
     enum Beep: String {
@@ -24,6 +27,7 @@ final class SoundPlayer: NSObject, AVSpeechSynthesizerDelegate {
     private let session = AVAudioSession.sharedInstance()
     private let synthesizer = AVSpeechSynthesizer()
     private var players: [Beep: AVAudioPlayer] = [:]
+    private var silence: AVAudioPlayer?
     private var isWorkoutActive = false
 
     override init() {
@@ -40,6 +44,14 @@ final class SoundPlayer: NSObject, AVSpeechSynthesizerDelegate {
 
             player.prepareToPlay()
             players[beep] = player
+        }
+
+        if let url = Bundle.main.url(forResource: "silence", withExtension: "wav"),
+           let player = try? AVAudioPlayer(contentsOf: url) {
+            player.numberOfLoops = -1
+            player.volume = 0
+            player.prepareToPlay()
+            silence = player
         }
     }
 
@@ -87,6 +99,8 @@ final class SoundPlayer: NSObject, AVSpeechSynthesizerDelegate {
 
         do {
             if self.mode != .idle {
+                // the session cannot be deactivated while audio is playing
+                silence?.pause()
                 try session.setActive(false, options: .notifyOthersOnDeactivation)
             }
 
@@ -100,6 +114,7 @@ final class SoundPlayer: NSObject, AVSpeechSynthesizerDelegate {
 
             try session.setCategory(.playback, mode: .default, options: options)
             try session.setActive(true)
+            silence?.play()
         } catch {
             print("audio session \(mode):", error)
         }
