@@ -1,0 +1,49 @@
+name: Yoga
+options:
+  bundleIdPrefix: me.rstm
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "27.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    TARGETED_DEVICE_FAMILY: "1"
+targets:
+  Yoga:
+    type: application
+    platform: iOS
+    sources: [Yoga]
+    info:
+      path: Yoga/Info.plist
+      properties:
+        CFBundleDisplayName: Yoga
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        ITSAppUsesNonExemptEncryption: false
+  YogaTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [YogaTests]
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: Yoga
+schemes:
+  Yoga:
+    build:
+      targets:
+        Yoga: all
+        YogaTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets: [YogaTests]

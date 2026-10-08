@@ -1,0 +1,22 @@
+{
+  "name": "Yoga",
+  "sport": "Yoga",
+  "timers": [
+    { "id": 0, "name": "Single-leg Stretch Left", "time": 60 },
+    { "id": 1, "name": "Single-leg Stretch Right", "time": 60 },
+    { "id": 2, "name": "Double-leg Stretch", "time": 60 },
+    { "id": 3, "name": "Figure-4 Glute Stretch Left", "time": 60 },
+    { "id": 4, "name": "Figure-4 Glute Stretch Right", "time": 60 },
+    { "id": 5, "name": "Reclined Hand-to-Toe Left", "time": 60 },
+    { "id": 6, "name": "Reclined Hand-to-Toe Right", "time": 60 },
+    { "id": 7, "name": "Supine Spinal Twist Left", "time": 60 },
+    { "id": 8, "name": "Supine Spinal Twist Right", "time": 60 },
+    { "id": 9, "name": "Bridge Pose", "time": 60 },
+    { "id": 10, "name": "Locust Pose", "time": 60 },
+    { "id": 11, "name": "Cat-Cow", "time": 90 },
+    { "id": 12, "name": "Half-kneeling Hip Flexor Left", "time": 60 },
+    { "id": 13, "name": "Half-kneeling Hip Flexor Right", "time": 60 },
+    { "id": 14, "name": "Sphinx Pose", "time": 180 },
+    { "id": 15, "name": "Child’s Pose", "time": 180 }
+  ]
+}
