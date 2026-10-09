@@ -10,10 +10,10 @@
 		17F6DE44462CADB10D2F9DEA /* WorkoutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6FDE9D242487B857027FBC /* WorkoutStoreTests.swift */; };
 		185C9705CF19F20518DA6112 /* YogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF7597DBEEF953D36220AD /* YogaApp.swift */; };
 		1A64F9B5A246B6B57EEDB461 /* beep_short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0CDDE9612CBE7EFD46279F76 /* beep_short.wav */; };
+		228F3725C73FF455608FA787 /* yoga.json in Resources */ = {isa = PBXBuildFile; fileRef = 59A42F80823AF4C7534787C1 /* yoga.json */; };
 		23977BFA85B79B5D41F747AE /* StravaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07A04113D8C26C43926A87 /* StravaButton.swift */; };
 		2FA2087FD3C5D13B450AC9AF /* WorkoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B83B616154A8F76C09EB63 /* WorkoutTimer.swift */; };
 		35A2B3AABA5BFB8C434621C1 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7029FA0AD8DB46BA9272F9C /* Workout.swift */; };
-		3BA89959626EF64137D67C63 /* yoga.json in Resources */ = {isa = PBXBuildFile; fileRef = AF3E6E98E826C7DBFD60412F /* yoga.json */; };
 		40E3A6C939A5F01D19B3CDB0 /* beep_long.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FF7178694EAA8A43F3D7100 /* beep_long.wav */; };
 		4772E168377F807377A23024 /* SecretStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015CEF72315832EF2826362 /* SecretStore.swift */; };
 		5540AD9FF9E77F5650197E8E /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0CAEC1FAEBD9FE8531FCE /* WorkoutView.swift */; };
@@ -60,6 +60,7 @@
 		49007FC437C3740249201E3D /* WorkoutTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimerTests.swift; sourceTree = "<group>"; };
 		4A6FDE9D242487B857027FBC /* WorkoutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStoreTests.swift; sourceTree = "<group>"; };
 		4FA4CF996C36D5D516104DFD /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		59A42F80823AF4C7534787C1 /* yoga.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = yoga.json; sourceTree = "<group>"; };
 		61DC0A7231A8E7EE693A9D10 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		72B83B616154A8F76C09EB63 /* WorkoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimer.swift; sourceTree = "<group>"; };
 		7324A19698EE9BAD7DFF7C41 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		A303564D76B927FE5062BA4A /* silence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silence.wav; sourceTree = "<group>"; };
 		A620B936C4C291C7929B09F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD07A04113D8C26C43926A87 /* StravaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaButton.swift; sourceTree = "<group>"; };
-		AF3E6E98E826C7DBFD60412F /* yoga.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = yoga.json; sourceTree = "<group>"; };
 		B7029FA0AD8DB46BA9272F9C /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		E015CEF72315832EF2826362 /* SecretStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretStore.swift; sourceTree = "<group>"; };
 		F53277E807DAB15F45B0EFF2 /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
@@ -102,14 +102,6 @@
 				75E0CAEC1FAEBD9FE8531FCE /* WorkoutView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		4FACE43A55A642CA368F1563 /* Fixtures */ = {
-			isa = PBXGroup;
-			children = (
-				AF3E6E98E826C7DBFD60412F /* yoga.json */,
-			);
-			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		5EC2E76DBC2C3FABBC2A9592 /* Timer */ = {
@@ -160,6 +152,7 @@
 		8419F2D98844A487EFDB6085 = {
 			isa = PBXGroup;
 			children = (
+				59A42F80823AF4C7534787C1 /* yoga.json */,
 				73832999978726FEB6682CA4 /* Yoga */,
 				CE89737985962F6BEF1FDE9B /* YogaTests */,
 				E8D469521999AAB2CB8E18FC /* Products */,
@@ -192,7 +185,6 @@
 				96F943E2FB7404C723A5E071 /* WorkoutParserTests.swift */,
 				4A6FDE9D242487B857027FBC /* WorkoutStoreTests.swift */,
 				49007FC437C3740249201E3D /* WorkoutTimerTests.swift */,
-				4FACE43A55A642CA368F1563 /* Fixtures */,
 			);
 			path = YogaTests;
 			sourceTree = "<group>";
@@ -273,9 +265,11 @@
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					3E9748C09FC1932B3F614691 = {
+						DevelopmentTeam = 2D58ZVPNHD;
 						ProvisioningStyle = Automatic;
 					};
 					669C59D74BA26C2160C7459E = {
+						DevelopmentTeam = 2D58ZVPNHD;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -305,7 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BA89959626EF64137D67C63 /* yoga.json in Resources */,
+				228F3725C73FF455608FA787 /* yoga.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +452,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2D58ZVPNHD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -526,6 +521,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2D58ZVPNHD;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
