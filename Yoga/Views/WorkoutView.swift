@@ -6,11 +6,11 @@ struct WorkoutView: View {
     let strava: StravaClient
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 24) {
             TimerDisplay(seconds: timer.seconds)
                 // the rounded font carries a lot of internal leading
-                .padding(.top, -8)
-                .padding(.bottom, -18)
+                .padding(.top, -4)
+                .padding(.bottom, -14)
 
             HStack(spacing: 16) {
                 Button(action: timer.reset) {
@@ -28,19 +28,31 @@ struct WorkoutView: View {
             .buttonBorderShape(.capsule)
             .padding(.horizontal, 16)
 
-            List {
-                ForEach(Array(workout.timers.enumerated()), id: \.element.id) { index, interval in
-                    IntervalRow(interval: interval, isActive: index == timer.activeIndex)
-                        .listRowSeparator(index == workout.timers.count - 1 ? .hidden : .visible, edges: .bottom)
-                        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+            ScrollViewReader { proxy in
+                List {
+                    ForEach(Array(workout.timers.enumerated()), id: \.element.id) { index, interval in
+                        IntervalRow(interval: interval, isActive: index == timer.activeIndex)
+                            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                            .id(interval.id)
+                    }
+
+                    FooterView(strava: strava)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 8, trailing: 16))
+                }
+                .listStyle(.plain)
+                .padding(.top, 8)
+                .environment(\.defaultMinListRowHeight, 40)
+                .onChange(of: timer.activeIndex) { _, index in
+                    guard let index, workout.timers.indices.contains(index) else { return }
+
+                    withAnimation {
+                        proxy.scrollTo(workout.timers[index].id, anchor: .center)
+                    }
                 }
             }
-            .listStyle(.plain)
-            .environment(\.defaultMinListRowHeight, 40)
-
-            FooterView(strava: strava)
-                .padding(.top, -16)
         }
+        .padding(.top, 16)
     }
 }
 
@@ -79,15 +91,12 @@ struct FooterView: View {
 
     var body: some View {
         HStack {
+            StravaButton(strava: strava)
+            Spacer()
             Text(AppInfo.version)
                 .font(.footnote)
-                .foregroundStyle(.secondary)
-            Spacer()
-            StravaButton(strava: strava)
+                .foregroundStyle(.tertiary)
         }
-        .padding(.horizontal)
-        .padding(.top, 12)
-        .padding(.bottom, 8)
     }
 }
 
@@ -107,6 +116,6 @@ struct FooterView: View {
             timer: WorkoutTimer(timers: workout.timers),
             strava: StravaClient(store: MemoryStore())
         )
-            .navigationTitle("Yoga")
+        .navigationTitle("Yoga")
     }
 }
