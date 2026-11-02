@@ -20,21 +20,26 @@
 		55F8965D3CBBDD20A90D1833 /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53277E807DAB15F45B0EFF2 /* WorkoutStore.swift */; };
 		5887C028F7821B6F9D3D3154 /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = A303564D76B927FE5062BA4A /* silence.wav */; };
 		5C9B29E362703456C59BC5FB /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324A19698EE9BAD7DFF7C41 /* TimeFormat.swift */; };
+		613380F54605A968C51AC3BA /* IntervalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00442810D446BC7E5DA0CBEB /* IntervalsTests.swift */; };
 		6C3B40A1E4F264CC7A1BE62E /* WorkoutSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063BE1142516AF4BBE81F8F /* WorkoutSounds.swift */; };
 		725685E9D0762CE7CC387339 /* StravaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D060F0712F177EC8789B1 /* StravaTests.swift */; };
+		757A2E66B0AD4C903C1ABF18 /* IntervalsActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832AEE809E72FE79161281AC /* IntervalsActivity.swift */; };
 		834385FEBB2B56A7EA71B559 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DC0A7231A8E7EE693A9D10 /* AppInfo.swift */; };
 		84B0EAC76D67C005D7510066 /* StravaAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29AEBD9B8297F00D5738B8 /* StravaAuth.swift */; };
 		9BB5659EFA8CB82282768A48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24615A657F31D9FEF61E744F /* ContentView.swift */; };
 		9C72A00238B52F73E0F6D54F /* StravaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53A7BC336E7435AE9F2A6DD /* StravaConfig.swift */; };
 		A691005E7CC1C949064901EC /* StravaActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891129DC867BC9D647AE5A2C /* StravaActivity.swift */; };
 		B07805364756686124EC8DD4 /* StravaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50A8A9E3B83FA4E0CA5006 /* StravaClient.swift */; };
+		BC1510D2014DEC885FBD7DDF /* IntervalsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D09C68A9A574F8CD803D2 /* IntervalsButton.swift */; };
 		C5AD0344648B36EE006E5DD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A620B936C4C291C7929B09F6 /* Assets.xcassets */; };
 		CA41BA011985EE650F36E718 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4CF996C36D5D516104DFD /* SoundPlayer.swift */; };
+		CE99BAF5E56B08E9A34B3191 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E557D73762D0887C4F28B4 /* Requests.swift */; };
 		DB7F065FD1AF809BFE46A8AF /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412DC2775BDCD844B9C9937 /* Interval.swift */; };
 		E2251895AF0862AC07E6CF72 /* WorkoutParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F943E2FB7404C723A5E071 /* WorkoutParserTests.swift */; };
 		E9204751343B761D2C33C561 /* EmptyWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDEF22FD68431EF746965B /* EmptyWorkoutView.swift */; };
 		E9FE487FFDFF42AE2633B81E /* WorkoutTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49007FC437C3740249201E3D /* WorkoutTimerTests.swift */; };
 		FA2BF9DDC4FDA33C1063E6FD /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081864203FA56818F545243A /* Pasteboard.swift */; };
+		FAAD6FB8B1C2FD4504B93452 /* IntervalsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37CF5932D4B9828BBAC997 /* IntervalsClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00442810D446BC7E5DA0CBEB /* IntervalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalsTests.swift; sourceTree = "<group>"; };
 		081864203FA56818F545243A /* Pasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
 		0A5A40110F587EA2C73AE42A /* Yoga.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Yoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDDE9612CBE7EFD46279F76 /* beep_short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep_short.wav; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 		2412DC2775BDCD844B9C9937 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		241D060F0712F177EC8789B1 /* StravaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaTests.swift; sourceTree = "<group>"; };
 		24615A657F31D9FEF61E744F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A37CF5932D4B9828BBAC997 /* IntervalsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalsClient.swift; sourceTree = "<group>"; };
 		3ECF7597DBEEF953D36220AD /* YogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaApp.swift; sourceTree = "<group>"; };
 		4063BE1142516AF4BBE81F8F /* WorkoutSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSounds.swift; sourceTree = "<group>"; };
 		49007FC437C3740249201E3D /* WorkoutTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimerTests.swift; sourceTree = "<group>"; };
@@ -66,6 +73,8 @@
 		7324A19698EE9BAD7DFF7C41 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		75E0CAEC1FAEBD9FE8531FCE /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		7FF7178694EAA8A43F3D7100 /* beep_long.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep_long.wav; sourceTree = "<group>"; };
+		816D09C68A9A574F8CD803D2 /* IntervalsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalsButton.swift; sourceTree = "<group>"; };
+		832AEE809E72FE79161281AC /* IntervalsActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalsActivity.swift; sourceTree = "<group>"; };
 		85ABDE9BDE4E1FD5A9797316 /* YogaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = YogaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891129DC867BC9D647AE5A2C /* StravaActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaActivity.swift; sourceTree = "<group>"; };
 		8CCDEF22FD68431EF746965B /* EmptyWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWorkoutView.swift; sourceTree = "<group>"; };
@@ -78,6 +87,7 @@
 		E015CEF72315832EF2826362 /* SecretStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretStore.swift; sourceTree = "<group>"; };
 		F53277E807DAB15F45B0EFF2 /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
 		F53A7BC336E7435AE9F2A6DD /* StravaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaConfig.swift; sourceTree = "<group>"; };
+		F7E557D73762D0887C4F28B4 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		FA29AEBD9B8297F00D5738B8 /* StravaAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,10 +108,20 @@
 			isa = PBXGroup;
 			children = (
 				8CCDEF22FD68431EF746965B /* EmptyWorkoutView.swift */,
+				816D09C68A9A574F8CD803D2 /* IntervalsButton.swift */,
 				AD07A04113D8C26C43926A87 /* StravaButton.swift */,
 				75E0CAEC1FAEBD9FE8531FCE /* WorkoutView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5559FEC64C0C7E646596F524 /* Intervals */ = {
+			isa = PBXGroup;
+			children = (
+				832AEE809E72FE79161281AC /* IntervalsActivity.swift */,
+				2A37CF5932D4B9828BBAC997 /* IntervalsClient.swift */,
+			);
+			path = Intervals;
 			sourceTree = "<group>";
 		};
 		5EC2E76DBC2C3FABBC2A9592 /* Timer */ = {
@@ -137,6 +157,7 @@
 				24615A657F31D9FEF61E744F /* ContentView.swift */,
 				1E8018D9EBD0A23A1F6B09BB /* Info.plist */,
 				3ECF7597DBEEF953D36220AD /* YogaApp.swift */,
+				5559FEC64C0C7E646596F524 /* Intervals */,
 				E62E480A0BFCC9FCA00766E9 /* Model */,
 				E084B83C5D9D80B42BE67ECD /* Resources */,
 				90E1ADE09956352A546FCA80 /* Sound */,
@@ -181,6 +202,8 @@
 		CE89737985962F6BEF1FDE9B /* YogaTests */ = {
 			isa = PBXGroup;
 			children = (
+				00442810D446BC7E5DA0CBEB /* IntervalsTests.swift */,
+				F7E557D73762D0887C4F28B4 /* Requests.swift */,
 				241D060F0712F177EC8789B1 /* StravaTests.swift */,
 				96F943E2FB7404C723A5E071 /* WorkoutParserTests.swift */,
 				4A6FDE9D242487B857027FBC /* WorkoutStoreTests.swift */,
@@ -321,6 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				613380F54605A968C51AC3BA /* IntervalsTests.swift in Sources */,
+				CE99BAF5E56B08E9A34B3191 /* Requests.swift in Sources */,
 				725685E9D0762CE7CC387339 /* StravaTests.swift in Sources */,
 				E2251895AF0862AC07E6CF72 /* WorkoutParserTests.swift in Sources */,
 				17F6DE44462CADB10D2F9DEA /* WorkoutStoreTests.swift in Sources */,
@@ -336,6 +361,9 @@
 				9BB5659EFA8CB82282768A48 /* ContentView.swift in Sources */,
 				E9204751343B761D2C33C561 /* EmptyWorkoutView.swift in Sources */,
 				DB7F065FD1AF809BFE46A8AF /* Interval.swift in Sources */,
+				757A2E66B0AD4C903C1ABF18 /* IntervalsActivity.swift in Sources */,
+				BC1510D2014DEC885FBD7DDF /* IntervalsButton.swift in Sources */,
+				FAAD6FB8B1C2FD4504B93452 /* IntervalsClient.swift in Sources */,
 				FA2BF9DDC4FDA33C1063E6FD /* Pasteboard.swift in Sources */,
 				4772E168377F807377A23024 /* SecretStore.swift in Sources */,
 				CA41BA011985EE650F36E718 /* SoundPlayer.swift in Sources */,
@@ -450,7 +478,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 2D58ZVPNHD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -470,7 +498,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -519,7 +547,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 2D58ZVPNHD;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -533,7 +561,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

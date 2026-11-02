@@ -5,12 +5,13 @@ struct ContentView: View {
     @State private var timer = WorkoutTimer(timers: [])
     @State private var sounds = WorkoutSounds(player: SoundPlayer())
     @State private var strava = StravaClient()
+    @State private var intervals = IntervalsClient()
 
     var body: some View {
         NavigationStack {
             Group {
                 if let workout = store.workout, !workout.timers.isEmpty {
-                    WorkoutView(workout: workout, timer: timer, strava: strava)
+                    WorkoutView(workout: workout, timer: timer, strava: strava, intervals: intervals)
                 } else {
                     EmptyWorkoutView(action: importFromPasteboard)
                 }
@@ -48,11 +49,15 @@ struct ContentView: View {
         }
         .onChange(of: store.workout, initial: true) { _, workout in
             timer.reset()
-            timer = WorkoutTimer(timers: workout?.timers ?? [], onEvent: { [sounds, strava] (event: WorkoutTimer.Event) in
+            timer = WorkoutTimer(timers: workout?.timers ?? [], onEvent: { [sounds, strava, intervals] (event: WorkoutTimer.Event) in
                 sounds.handle(event)
 
                 if case .complete(let summary) = event, let workout {
-                    Task { await strava.send(workout: workout, summary: summary) }
+                    // Intervals first: it then links the Strava copy instead of importing a stub
+                    Task {
+                        await intervals.send(workout: workout, summary: summary)
+                        await strava.send(workout: workout, summary: summary)
+                    }
                 }
             })
         }

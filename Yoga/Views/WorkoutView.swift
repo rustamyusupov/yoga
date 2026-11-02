@@ -4,6 +4,7 @@ struct WorkoutView: View {
     let workout: Workout
     let timer: WorkoutTimer
     let strava: StravaClient
+    let intervals: IntervalsClient
 
     var body: some View {
         VStack(spacing: 24) {
@@ -36,7 +37,7 @@ struct WorkoutView: View {
                             .id(interval.id)
                     }
 
-                    FooterView(strava: strava)
+                    FooterView(strava: strava, intervals: intervals)
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 8, trailing: 16))
                 }
@@ -88,10 +89,12 @@ struct IntervalRow: View {
 
 struct FooterView: View {
     let strava: StravaClient
+    let intervals: IntervalsClient
 
     var body: some View {
-        HStack {
+        HStack(spacing: 16) {
             StravaButton(strava: strava)
+            IntervalsButton(intervals: intervals)
             Spacer()
             Text(AppInfo.version)
                 .font(.footnote)
@@ -114,7 +117,8 @@ struct FooterView: View {
         WorkoutView(
             workout: workout,
             timer: WorkoutTimer(timers: workout.timers),
-            strava: StravaClient(store: MemoryStore())
+            strava: StravaClient(store: MemoryStore()),
+            intervals: IntervalsClient(store: MemoryStore())
         )
         .navigationTitle("Yoga")
     }

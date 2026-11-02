@@ -10,7 +10,7 @@ protocol SecretStore: Sendable {
 
 struct KeychainStore: SecretStore {
     let service = "me.rstm.Yoga"
-    let account = "strava"
+    var account = "strava"
 
     private var query: [String: Any] {
         [

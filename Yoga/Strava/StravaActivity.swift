@@ -12,8 +12,13 @@ enum StravaActivity {
             ("sport_type", workout.sport),
             ("start_date_local", localISO(summary.startedAt, timeZone: timeZone)),
             ("elapsed_time", String(summary.elapsed)),
-            ("description", summary.timers.map { "\($0.name) — \(formatTime($0.time))" }.joined(separator: "\n")),
+            ("description", description(summary)),
         ]
+    }
+
+    /// One `name — mm:ss` line per interval.
+    static func description(_ summary: WorkoutSummary) -> String {
+        summary.timers.map { "\($0.name) — \(formatTime($0.time))" }.joined(separator: "\n")
     }
 
     /// `yyyy-MM-ddTHH:mm:ss` in the given time zone, no offset — what Strava expects.
