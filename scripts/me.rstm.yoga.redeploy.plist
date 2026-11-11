@@ -8,9 +8,11 @@
     <array>
         <string>/Users/rustam/Projects/yoga/scripts/redeploy.sh</string>
     </array>
-    <!-- Every 6 days; a missed run fires at next wake. -->
+    <!-- Every 2 hours (a missed run fires at next wake); the script exits
+         at once while the profile on the device has >2 days left, and
+         otherwise waits up to 10 min for the iPhone to show up on Wi-Fi. -->
     <key>StartInterval</key>
-    <integer>518400</integer>
+    <integer>7200</integer>
     <key>StandardOutPath</key>
     <string>/Users/rustam/Library/Logs/Yoga/launchd.log</string>
     <key>StandardErrorPath</key>
