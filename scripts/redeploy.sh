@@ -1,12 +1,14 @@
 #!/bin/zsh
 # Rebuilds Yoga with a fresh 7-day provisioning profile and reinstalls it on
-# the iPhone: over USB when plugged in, otherwise over Wi-Fi via plain IPv4
-# lockdownd (scripts/install_wifi.py), which keeps working while Cisco VPN is
+# the iPhone (scripts/install_app.py): over USB when plugged in, otherwise over
+# Wi-Fi via plain IPv4 lockdownd, which keeps working while Cisco VPN is
 # connected — usbmuxd/CoreDevice would go over IPv6 link-local, which the VPN
 # drops. Run by launchd every couple of hours, see
 # scripts/me.rstm.yoga.redeploy.plist. Does nothing while the profile last
-# installed ON THE DEVICE still has more than MIN_DAYS_LEFT days to live;
-# pass --force to rebuild and reinstall anyway.
+# installed ON THE DEVICE still has more than MIN_DAYS_LEFT days to live, and
+# does not install while the app is running on the device (even suspended in
+# the background) — the next run tries again. Pass --force to rebuild and
+# reinstall regardless of both.
 set -euo pipefail
 
 export PATH="/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -22,6 +24,7 @@ LOG_DIR="$HOME/Library/Logs/Yoga"
 INSTALLED_UNTIL="$LOG_DIR/installed_until"   # profile expiry of the build on the device
 WIFI_WAIT=600                                # seconds to wait for a sleeping iPhone
 MIN_DAYS_LEFT=2
+APP_RUNNING_STATUS=3                         # install_app.py: app is running on the device
 
 mkdir -p "$LOG_DIR"
 exec >>"$LOG_DIR/redeploy.log" 2>&1
@@ -53,17 +56,27 @@ xcodebuild build -quiet \
 expiry="$(profile_expiry)"
 echo "new profile valid until $expiry"
 
+if [[ ! -x "$VENV/bin/python" ]]; then
+    python3 -m venv "$VENV"
+    "$VENV/bin/pip" install -q "pymobiledevice3==$PYMOBILEDEVICE3_VERSION"
+fi
+
+install_args=()
+if [[ "${1:-}" == "--force" ]]; then install_args+=(--allow-running); fi
 if idevice_id -l | grep -q "$UDID"; then
     echo "installing over USB"
-    ideviceinstaller -u "$UDID" install "$APP"
 else
     echo "installing over Wi-Fi ($HOST)"
-    if [[ ! -x "$VENV/bin/python" ]]; then
-        python3 -m venv "$VENV"
-        "$VENV/bin/pip" install -q "pymobiledevice3==$PYMOBILEDEVICE3_VERSION"
-    fi
-    "$VENV/bin/python" "$PROJECT_DIR/scripts/install_wifi.py" --wait "$WIFI_WAIT" "$UDID" "$HOST" "$APP"
+    install_args+=(--host "$HOST" --wait "$WIFI_WAIT")
 fi
+
+rc=0
+"$VENV/bin/python" "$PROJECT_DIR/scripts/install_app.py" "${install_args[@]}" "$UDID" "$APP" || rc=$?
+if (( rc == APP_RUNNING_STATUS )); then
+    echo "=== $(date '+%Y-%m-%d %H:%M:%S') app is running, postponed"
+    exit 0
+fi
+(( rc == 0 )) || exit "$rc"
 
 echo "$expiry" >"$INSTALLED_UNTIL"
 echo "=== $(date '+%Y-%m-%d %H:%M:%S') done"
